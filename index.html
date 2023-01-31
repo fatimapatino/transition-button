@@ -1,5 +1,11 @@
 <script>
-	let button
+	
+  function randomHue () {
+    const h = Math.random() * 360
+    return `hsl(${h}deg, 50%, 50%`
+  }
+  
+  let button
   
   function circle () {
     const ele = document.createElement('div')
@@ -8,14 +14,14 @@
     ele.style.backgroundColor = 'blue'
     ele.style.borderRadius = '50%'
     // document.body.appendChild(ele)
-    ele.style.transition = 'all 0.25s'
+    ele.style.transition = 'all 0.5s'
     return ele
     // ele only exists within this function
     // but it will let you make the circel in the page
   }
   
   function mouseIsDown (e) {
-    button.style.backgroundColor = 'green'
+    button.style.backgroundColor = randomHue()
   }
   
   function mouseIsUp (e) {
